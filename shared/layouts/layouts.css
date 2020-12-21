@@ -1,0 +1,29 @@
+.appLayout {
+  height: 100vh;
+}
+
+.appLayout .parent {
+  height: 100vh;
+  display: grid;
+  grid-template: auto 1fr auto / auto 1fr auto;
+}
+
+.appLayout header {
+  grid-column: 1 / 4;
+}
+
+.appLayout .left-side {
+  grid-column: 1 / 2;
+}
+
+.appLayout main {
+  grid-column: 2 / 3;
+}
+
+.appLayout .right-side {
+  grid-column: 3 / 4;
+}
+
+.appLayout footer {
+  grid-column: 1 / 4;
+}
