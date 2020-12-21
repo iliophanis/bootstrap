@@ -77,11 +77,16 @@ namespace Infrastructure.Persistence
                 .Facets.FirstOrDefault(x => x.Name == "data")
                 .Output<T>()
                 .ToList();
-
+            var totalPages=(int)Match.Ceiling(count/(double)pageParams.PageSize);
+            var hasPreviousPage =pageParams.PageNumber > 1;
+            var hasNextPage = pageParams.PageNumber < totalPages;
             var envelope = new Envelope<T>()
             {
                 Items = data,
                 TotalSize = count
+                TotalPages=totalPages
+                HasPreviousPage=HasPreviousPage
+                HasNextPage=hasNextPage
             };
 
             return envelope;
