@@ -1,0 +1,251 @@
+:root {
+  --drawer-z-index: 1099; /* Loading is 1100 */
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltipContent {
+  visibility: hidden;
+  width: 120px;
+  word-wrap: break-word;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 2;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.1s;
+}
+
+.tooltip:hover .tooltipContent {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip .tooltipContent::after {
+  content: ' ';
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.drawer {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 0;
+  z-index: var(--drawer-z-index);
+  transition: width 1s;
+}
+
+.drawerOpen {
+  width: 50%;
+}
+
+.drawerOpenFullWidth {
+  width: 100%;
+}
+
+.drawerBackdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: calc(var(--drawer-z-index) - 1);
+  top: 0;
+  right: 0;
+}
+
+.tabLink:focus {
+  box-shadow: none;
+}
+
+viewItemCursor.iconParent {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.icon {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  place-items: center;
+}
+
+.iconBadge {
+  grid-row: 1 / 1;
+  grid-column: 2 / 2;
+  z-index: 200;
+  place-items: center;
+}
+
+.pageHeaderToolbarGroup {
+  border: 2px solid var(--primary);
+  border-radius: 0.5rem;
+}
+
+.pageHeaderToolbarButton {
+  color: var(--primary);
+}
+
+.pageHeaderToolbarButton:hover {
+  background-color: var(--primary);
+  color: var(--light);
+}
+
+.pageHeaderToolbarButton:hover > i {
+  color: var(--light) !important;
+}
+
+.pageHeaderToolbarButton:disabled {
+  color: var(--light);
+}
+
+.pageHeaderToolbarButton:disabled > i {
+  color: var(--gray) !important;
+}
+
+.tableHeaderCell {
+  white-space: nowrap;
+}
+
+.sortableTableHeaderCell {
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.labelInput {
+  font-size: 95%;
+}
+
+.fa_stack_inline {
+  display: inline !important;
+  vertical-align: text-bottom !important;
+  line-height: revert !important;
+}
+
+.toastContainer {
+  position: absolute;
+  top: calc(var(--iris-header-height) + 10px);
+  right: 12px;
+  z-index: 9999;
+}
+
+.deleteModalFooter {
+  border-top: 0px !important;
+}
+
+.deleteModalContainer {
+  max-width: 500px;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.involvedCardHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.2rem 0.2rem 0.2rem 0.5rem;
+}
+
+.dueDateDataCell {
+  min-width: 11em;
+}
+
+@media screen and (min-width: 1000px) {
+  .childTaskCardBody {
+    padding-top: 1%;
+    overflow-x: auto;
+    max-height: 7em;
+  }
+}
+
+.viewItemCursor {
+  cursor: pointer;
+}
+
+.cursorPointer {
+  cursor: pointer;
+}
+
+.disabledPointer {
+  cursor: no-drop;
+}
+
+.dropdownRecordButton {
+  white-space: pre;
+  padding-top: 7px;
+  border-radius: 0px !important;
+}
+
+.referencesBody {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.fa_stack_1x {
+  text-align: right !important;
+  bottom: 0 !important;
+  line-height: normal !important;
+}
+.fa_stack_2x {
+  font-size: 1.4em !important;
+}
+
+.tableModal {
+  max-width: 90% !important;
+  overflow-y: auto;
+}
+
+.fa_disabled {
+  cursor: none;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.dateTimeButton {
+  font-size: 90%;
+}
+
+.dateTimeContainer {
+  height: 100%;
+  width: 105%;
+}
+
+.modalButton {
+  font-size: 90%;
+}
+
+.modal {
+  max-width: 90%;
+}
+
+.textAreaResize {
+  resize: none;
+}
+
+/* same with form-control */
+.inputDateTimePicker {
+  height: calc(1.5em + 1rem + 2px);
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}
