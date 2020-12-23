@@ -1,0 +1,3 @@
+ng add @angular/material
+
+https://medium.com/javascript-in-plain-english/implementing-angular-material-table-with-pagination-server-side-filtering-and-sorting-58e6a2ba4a48
